@@ -1,5 +1,7 @@
 package org.example;
+
 import java.io.Serializable;
+
 public class Student implements Serializable {
     public String name;
     public transient int room; // поле, яке не буде серіалізовано
@@ -13,9 +15,18 @@ public class Student implements Serializable {
         this.address = address;
         this.hasDiscount = hasDiscount;
     }
+    public Student()
+    {
+        this.name = "Name";
+        this.room = 0;
+        this.payment = 0.0;
+        this.address = new Address();
+    }
+
     public int getRoom() {
         return room;
     }
+
     public String getName()
     {
         return this.name;
@@ -28,14 +39,17 @@ public class Student implements Serializable {
     {
         return this.payment;
     }
+
     public boolean getDiscount()
     {
         return this.hasDiscount;
     }
+
     public void setName(String name)
     {
         this.name = name;
     }
+
     public  void setRoom(int room)
     {
         this.room = room;
@@ -44,6 +58,7 @@ public class Student implements Serializable {
     {
         this.address = address;
     }
+
     public void setPayment(double payment)
     {
         this.payment = payment;
